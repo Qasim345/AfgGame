@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Qasim Sarwari" />
+  <meta name="theme-color" content="#000" />
+  <meta name="description" content="a simple game, developed by Qasim Sarwari. languages used: JavaScript, HTML + CSS" />
+  <link rel="stylesheet" href="src/style.css" type="text/css" />
+  <title>Hubab Game | Home | Qasim</title>
+</head>
+<body>
+  <div class="loader">
+    <div class="hubab">
+    </div>
+  </div>
+  <div class="hero">
+    <a href="home.html">Start</a>
+    <a href="#" id="about">About</a>
+    <a href="mailto:qasimsarwari2020@gmail.com">Contact us</a>
+    <a href="#" id="help">Help ?</a>
+  </div>
+
+  <div class="about">
+    <h2></h2><br />
+    <span id="close">&times;</span>
+    <p></p>
+  </div>
+  <script type="text/javascript">
+    window.addEventListener("load", ()=> {
+      window.scrollTo(0,1);
+      setTimeout(()=> {
+        document.querySelector(".loader").style.display = "none";
+      }, 1500)
+    });
+    //about
+    var title = document.querySelector(".about h2");
+    var txt = document.querySelector(".about p");
+    var abDiv = document.querySelector(".about");
+    document.getElementById("about").onclick = ()=> {
+      abDiv.style.display = "block";
+      title.innerHTML = "About Us";
+      txt.innerHTML = "This simple game developed by Qasim Sarwari using web technology in mobile with Acode IDE. for more information contact us.<br><a href='https://qa-sim.netlify.app'>portfolio website</a>";
+    }
+    // close about
+    document.getElementById("close").onclick = ()=> {
+      document.querySelector(".about").style.display = "none"
+    }
+    document.getElementById("help").onclick = ()=> {
+      abDiv.style.display = "block";
+      title.innerHTML = "Help";
+      txt.innerHTML = "To use this game click on start button and every where of game screen, and look to timer for end game, if timer = 0 Game over, and start again. also you can click Reset button to reset timer.";
+    }
+  </script>
+</body>
+</html>
